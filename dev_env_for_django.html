@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Prepare development environment of Django on Ubuntu</title>
+    <link type="text/css" rel="stylesheet" href="assets/css/bootstrap.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/bootstrap-responsive.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/pilcrow.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/hljs-github.min.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/style.css"/>
+    <style>
+    body {
+      background: url('assets/img/textured_paper.png') repeat top left;
+      background-color: #f6f6f6;
+    }
+    </style>
+  </head>
+<body>
+
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span3"><ul class="nav nav-list">
+    <li class="sidebar-header-1"><a href="#prepare-development-environment-of-django-on-ubuntu">Prepare development environment of Django on Ubuntu</a></li>
+    <li class="sidebar-header-2"><a href="#install-lamp">Install LAMP</a></li>
+    <li class="sidebar-header-2"><a href="#create-virtualenv">Create virtualenv</a></li>
+    <li class="sidebar-header-2"><a href="#active-virtualenv">Active virtualenv</a></li>
+    <li class="sidebar-header-2"><a href="#prerequisites">Prerequisites</a></li>
+    <li class="sidebar-header-2"><a href="#install-requirements">Install requirements</a></li>
+    <li class="sidebar-header-2"><a href="#test">Test</a></li>
+    <li class="sidebar-header-3"><a href="#create-test-project">Create test project</a></li>
+    <li class="sidebar-header-3"><a href="#configure-database-settings">Configure database settings</a></li>
+    <li class="sidebar-header-3"><a href="#create-database">Create database</a></li>
+    <li class="sidebar-header-3"><a href="#migrate-data">Migrate data</a></li>
+    <li class="sidebar-header-3"><a href="#run-server">Run server</a></li>
+    <li class="sidebar-header-2"><a href="#zsh-related-plugins">zsh related plugins</a></li>
+</ul>
+      </div>
+      <div class="span9 main"><h1 id="prepare-development-environment-of-django-on-ubuntu"><a class="header-link" href="#prepare-development-environment-of-django-on-ubuntu"></a>Prepare development environment of Django on Ubuntu</h1>
+<h2 id="install-lamp"><a class="header-link" href="#install-lamp"></a>Install LAMP</h2>
+<p>Django will run on MySQL db, to install MySQL db, tasksel is recommended way to install LAMP server.</p>
+<pre class="hljs"><code>sudo apt-get <span class="hljs-operator"><span class="hljs-keyword">install</span> tasksel
+sudo tasksel
+sudo apt-<span class="hljs-keyword">get</span> <span class="hljs-keyword">install</span> phpmyadmin</span></code></pre><h2 id="create-virtualenv"><a class="header-link" href="#create-virtualenv"></a>Create virtualenv</h2>
+<pre class="hljs"><code><span class="hljs-title">virtualenv</span> -p python3 --<span class="hljs-built_in">no</span>-site-packages ~/virtualenv/py3dj8</code></pre><p>where <code>-p</code> specify python exec name, <code>--no-site-packages</code> make a clean copy of current python3 environment, <code>~/virtualenv/py3dj8</code> is your virtualenv path for developing django project.</p>
+<h2 id="active-virtualenv"><a class="header-link" href="#active-virtualenv"></a>Active virtualenv</h2>
+<pre class="hljs"><code><span class="hljs-keyword">source</span> virtualenv<span class="hljs-regexp">/py3dj8/</span>bin<span class="hljs-regexp">/activate</span></code></pre><h2 id="prerequisites"><a class="header-link" href="#prerequisites"></a>Prerequisites</h2>
+<pre class="hljs"><code>sudo apt-<span class="hljs-built_in">get</span> install libmysqlclient-<span class="hljs-built_in">dev</span>
+sudo apt-<span class="hljs-built_in">get</span> install python3-<span class="hljs-built_in">dev</span></code></pre><h2 id="install-requirements"><a class="header-link" href="#install-requirements"></a>Install requirements</h2>
+<pre class="hljs"><code>pip <span class="hljs-keyword">install</span> -r requirements.txt</code></pre><h2 id="test"><a class="header-link" href="#test"></a>Test</h2>
+<h3 id="create-test-project"><a class="header-link" href="#create-test-project"></a>Create test project</h3>
+<pre class="hljs"><code><span class="hljs-built_in">mkdir</span> projectpath
+<span class="hljs-built_in">cd</span> projectpath
+django-admin startproject projectname</code></pre><h3 id="configure-database-settings"><a class="header-link" href="#configure-database-settings"></a>Configure database settings</h3>
+<pre class="hljs"><code><span class="hljs-keyword">vim</span> projectname/projectname/settings.<span class="hljs-keyword">py</span></code></pre><p>Change DataBase settings as following:</p>
+<pre class="hljs"><code>DATABASES = {
+    <span class="hljs-string">'default'</span>: {
+        <span class="hljs-string">'ENGINE'</span>: <span class="hljs-string">'django.db.backends.mysql'</span>,
+        <span class="hljs-string">'OPTIONS'</span>: {
+            <span class="hljs-string">'read_default_file'</span>: <span class="hljs-string">'/path/to/my.cnf'</span>,
+        },
+    }
+}</code></pre><p>my.cnf:</p>
+<pre class="hljs"><code><span class="hljs-title">[client]</span>
+<span class="hljs-setting">database = <span class="hljs-value">NAME</span></span>
+<span class="hljs-setting">user = <span class="hljs-value">USER</span></span>
+<span class="hljs-setting">password = <span class="hljs-value">PASSWORD</span></span>
+<span class="hljs-setting">default-character-set = <span class="hljs-value">utf8</span></span></code></pre><h3 id="create-database"><a class="header-link" href="#create-database"></a>Create database</h3>
+<pre class="hljs"><code>mysql -u root -p
+<span class="hljs-operator"><span class="hljs-keyword">create</span> <span class="hljs-keyword">database</span> dbname;</span></code></pre><h3 id="migrate-data"><a class="header-link" href="#migrate-data"></a>Migrate data</h3>
+<pre class="hljs"><code>python manage<span class="hljs-class">.py</span> migrate</code></pre><h3 id="run-server"><a class="header-link" href="#run-server"></a>Run server</h3>
+<pre class="hljs"><code>python manage<span class="hljs-class">.py</span> runserver</code></pre><p>Make sure above commands are running under your virtualenv</p>
+<hr>
+<h2 id="zsh-related-plugins"><a class="header-link" href="#zsh-related-plugins"></a>zsh related plugins</h2>
+<pre class="hljs"><code><span class="hljs-title">vim</span> ~/.zshrc</code></pre><p>add django plugin as following:</p>
+<pre class="hljs"><code>plugins=<span class="hljs-list">(<span class="hljs-keyword">git</span>, django, virtualenv, pip)</span></code></pre>      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+</body>
+</html>
