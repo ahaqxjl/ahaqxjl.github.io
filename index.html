@@ -61,10 +61,138 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-README" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/12/22/README/" class="article-date">
+  <time datetime="2015-12-22T03:48:01.639Z" itemprop="datePublished">2015-12-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="MintQuickNotes"><a href="#MintQuickNotes" class="headerlink" title="MintQuickNotes"></a>MintQuickNotes</h1><p>Including:</p>
+<ul>
+<li>Things after install mint 17</li>
+<li>Development environment for Django</li>
+<li>virtualenvwrapper</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/12/22/README/" data-id="ciiguqdwn0000rnk19c89novm" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-virtualenvwrapper" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/12/22/virtualenvwrapper/" class="article-date">
+  <time datetime="2015-12-22T03:48:01.639Z" itemprop="datePublished">2015-12-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h2><pre><code>sudo pip install virtualenvwrapper
+</code></pre><h2 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h2><p>Add following codes into shell profile, such as ~/.zshrc</p>
+<pre><code># virtualenvwrapper configuration
+# use python3 instead of python
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+# specify virtualenv path
+export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
+# virtualenvs path
+export WORKON_HOME=$HOME/virtualenv
+# projects path
+export PROJECT_HOME=$HOME/Projects
+# activate virtualenvwrapper on startup shell
+source /usr/local/bin/virtualenvwrapper.sh
+</code></pre><p>After that, execute <code>source ~/.zshrc</code> to make configuration work.</p>
+<h2 id="Use_virtualenvwrapper"><a href="#Use_virtualenvwrapper" class="headerlink" title="Use virtualenvwrapper"></a>Use virtualenvwrapper</h2><h3 id="Create_virtualenv"><a href="#Create_virtualenv" class="headerlink" title="Create virtualenv"></a>Create virtualenv</h3><pre><code>mkvirtualenv envname
+</code></pre><p>Then it will create a virtualenv in the $WORKON_HOME path</p>
+<h3 id="Activate_virtualenv"><a href="#Activate_virtualenv" class="headerlink" title="Activate virtualenv"></a>Activate virtualenv</h3><pre><code>workon envname
+</code></pre><p>use <code>deactivate</code> to exit virtualenv</p>
+<h3 id="List_all_virtualenv"><a href="#List_all_virtualenv" class="headerlink" title="List all virtualenv"></a>List all virtualenv</h3><pre><code>lsvirtualenv
+</code></pre><h3 id="Execute_command_on_all_virtualenvs"><a href="#Execute_command_on_all_virtualenvs" class="headerlink" title="Execute command on all virtualenvs"></a>Execute command on all virtualenvs</h3><pre><code>allvirtualenv command
+</code></pre><p>such as:</p>
+<pre><code># update pip for all virtualenvs
+allvirtualenv pip install -U pip
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/12/22/virtualenvwrapper/" data-id="ciiguqdx90001rnk19tiyfg8j" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-after_install_mint_17" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/12/22/after_install_mint_17/" class="article-date">
+  <time datetime="2015-12-22T03:48:01.639Z" itemprop="datePublished">2015-12-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Actions_After_Installed_Linux_Mint_17-2"><a href="#Actions_After_Installed_Linux_Mint_17-2" class="headerlink" title="Actions After Installed Linux Mint 17.2"></a>Actions After Installed Linux Mint 17.2</h1><ol>
+<li>Update package source list with Software Sources</li>
+<li>Download and install Sogou Pinyin (logout and then config)</li>
+<li>Install Google Chrome</li>
+<li>Install curl with apt-get</li>
+<li>Install virtualenv &amp; Django</li>
+<li>Install Gvim with spf13</li>
+</ol>
+<h2 id="Install_Google_Chrome"><a href="#Install_Google_Chrome" class="headerlink" title="Install Google Chrome"></a>Install Google Chrome</h2><pre><code>wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+sudo sh -c &apos;echo &quot;deb http://dl.google.com/linux/chrome/deb/ stable main&quot; &gt;&gt; /etc/apt/sources.list.d/google-chrome.list&apos;
+sudo apt-get update 
+sudo apt-get install google-chrome-stable 
+</code></pre><h2 id="Install_virtualenv"><a href="#Install_virtualenv" class="headerlink" title="Install virtualenv"></a>Install virtualenv</h2><pre><code>wget https://bootstrap.pypa.io/get-pip.py
+sudo python3 get-pip.py 
+sudo pip install virtualenv
+</code></pre><h2 id="Configure_virtualenv__26amp_3B_Install_Django"><a href="#Configure_virtualenv__26amp_3B_Install_Django" class="headerlink" title="Configure virtualenv &amp; Install Django"></a>Configure virtualenv &amp; Install Django</h2><pre><code>virtualenv ./virtualenv/py3
+cd virtualenv/py3/
+source bin/activate
+pip install Django
+</code></pre><h2 id="Install_Gvim_with_spf13"><a href="#Install_Gvim_with_spf13" class="headerlink" title="Install Gvim with spf13"></a>Install Gvim with spf13</h2><pre><code>sudo apt-get install vim-gnome 
+curl http://j.mp/spf13-vim3 -L -o - | sh
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/12/22/after_install_mint_17/" data-id="ciiguqdxv0003rnk1fyjcz26n" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/12/22/hello-world/" class="article-date">
-  <time datetime="2015-12-22T02:40:11.579Z" itemprop="datePublished">2015-12-22</time>
+  <time datetime="2015-12-22T02:52:30.659Z" itemprop="datePublished">2015-12-22</time>
 </a>
     
   </div>
@@ -96,7 +224,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/12/22/hello-world/" data-id="ciigso60000001nk1by4ex501" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/12/22/hello-world/" data-id="ciiguqdxf0002rnk19fd03w1x" class="article-share-link">Share</a>
       
       
     </footer>
@@ -121,7 +249,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">4</span></li></ul>
     </div>
   </div>
 
@@ -131,6 +259,18 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2015/12/22/README/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/22/virtualenvwrapper/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/22/after_install_mint_17/">(no title)</a>
+          </li>
         
           <li>
             <a href="/2015/12/22/hello-world/">Hello World</a>
