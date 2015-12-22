@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title><![CDATA[Hexo]]></title>
+  
+  <link href="/atom.xml" rel="self"/>
+  <link href="http://yoursite.com/"/>
+  <updated>2015-12-22T05:56:59.104Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name><![CDATA[Jordan Xu]]></name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Virtualenvwrapper tutorial]]></title>
+    <link href="http://yoursite.com/2015/12/22/virtualenvwrapper/"/>
+    <id>http://yoursite.com/2015/12/22/virtualenvwrapper/</id>
+    <published>2015-12-22T05:56:59.148Z</published>
+    <updated>2015-12-22T05:56:59.104Z</updated>
+    <content type="html"><![CDATA[<h2 id="install"><a href="#Install" class="headerlink" title="Install"></a>Install</h2><pre><code>sudo pip install virtualenvwrapper
+</code></pre><h2 id="configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h2><p>Add following codes into shell profile, such as ~/.zshrc</p>
+<pre><code># virtualenvwrapper configuration
+# use python3 instead of python
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+# specify virtualenv path
+export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
+# virtualenvs path
+export WORKON_HOME=$HOME/virtualenv
+# projects path
+export PROJECT_HOME=$HOME/Projects
+# activate virtualenvwrapper on startup shell
+source /usr/local/bin/virtualenvwrapper.sh
+</code></pre><p>After that, execute <code>source ~/.zshrc</code> to make configuration work.</p>
+<h2 id="use-virtualenvwrapper"><a href="#Use_virtualenvwrapper" class="headerlink" title="Use virtualenvwrapper"></a>Use virtualenvwrapper</h2><h3 id="create-virtualenv"><a href="#Create_virtualenv" class="headerlink" title="Create virtualenv"></a>Create virtualenv</h3><pre><code>mkvirtualenv envname
+</code></pre><p>Then it will create a virtualenv in the $WORKON_HOME path</p>
+<h3 id="activate-virtualenv"><a href="#Activate_virtualenv" class="headerlink" title="Activate virtualenv"></a>Activate virtualenv</h3><pre><code>workon envname
+</code></pre><p>use <code>deactivate</code> to exit virtualenv</p>
+<h3 id="list-all-virtualenv"><a href="#List_all_virtualenv" class="headerlink" title="List all virtualenv"></a>List all virtualenv</h3><pre><code>lsvirtualenv
+</code></pre><h3 id="execute-command-on-all-virtualenvs"><a href="#Execute_command_on_all_virtualenvs" class="headerlink" title="Execute command on all virtualenvs"></a>Execute command on all virtualenvs</h3><pre><code>allvirtualenv command
+</code></pre><p>such as:</p>
+<pre><code># update pip for all virtualenvs
+allvirtualenv pip install -U pip
+</code></pre>]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="install"><a href="#Install" class="headerlink" title="Install"></a>Install</h2><pre><code>sudo pip install virtualenvwrapper
+</code>]]>
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Prepare development environment of Django on Ubuntu]]></title>
+    <link href="http://yoursite.com/2015/12/22/dev_env_for_django/"/>
+    <id>http://yoursite.com/2015/12/22/dev_env_for_django/</id>
+    <published>2015-12-22T05:56:30.724Z</published>
+    <updated>2015-12-22T05:56:30.692Z</updated>
+    <content type="html"><![CDATA[<h1 id="prepare-development-environment-of-django-on-ubuntu"><a href="#Prepare_development_environment_of_Django_on_Ubuntu" class="headerlink" title="Prepare development environment of Django on Ubuntu"></a>Prepare development environment of Django on Ubuntu</h1><h2 id="install-lamp"><a href="#Install_LAMP" class="headerlink" title="Install LAMP"></a>Install LAMP</h2><p>Django will run on MySQL db, to install MySQL db, tasksel is recommended way to install LAMP server.</p>
+<pre><code>sudo apt-get install tasksel
+sudo tasksel
+sudo apt-get install phpmyadmin
+</code></pre><h2 id="create-virtualenv"><a href="#Create_virtualenv" class="headerlink" title="Create virtualenv"></a>Create virtualenv</h2><pre><code>virtualenv -p python3 --no-site-packages ~/virtualenv/py3dj8
+</code></pre><p>where <code>-p</code> specify python exec name, <code>--no-site-packages</code> make a clean copy of current python3 environment, <code>~/virtualenv/py3dj8</code> is your virtualenv path for developing django project.</p>
+<h2 id="active-virtualenv"><a href="#Active_virtualenv" class="headerlink" title="Active virtualenv"></a>Active virtualenv</h2><pre><code>source virtualenv/py3dj8/bin/activate
+</code></pre><h2 id="prerequisites"><a href="#Prerequisites" class="headerlink" title="Prerequisites"></a>Prerequisites</h2><pre><code>sudo apt-get install libmysqlclient-dev
+sudo apt-get install python3-dev
+</code></pre><h2 id="install-requirements"><a href="#Install_requirements" class="headerlink" title="Install requirements"></a>Install requirements</h2><pre><code>pip install -r requirements.txt
+</code></pre><h2 id="test"><a href="#Test" class="headerlink" title="Test"></a>Test</h2><h3 id="create-test-project"><a href="#Create_test_project" class="headerlink" title="Create test project"></a>Create test project</h3><pre><code>mkdir projectpath
+cd projectpath
+django-admin startproject projectname
+</code></pre><h3 id="configure-database-settings"><a href="#Configure_database_settings" class="headerlink" title="Configure database settings"></a>Configure database settings</h3><pre><code>vim projectname/projectname/settings.py
+</code></pre><p>Change DataBase settings as following:</p>
+<pre><code>DATABASES = {
+    &apos;default&apos;: {
+        &apos;ENGINE&apos;: &apos;django.db.backends.mysql&apos;,
+        &apos;OPTIONS&apos;: {
+            &apos;read_default_file&apos;: &apos;/path/to/my.cnf&apos;,
+        },
+    }
+}
+</code></pre><p>my.cnf:</p>
+<pre><code>[client]
+database = NAME
+user = USER
+password = PASSWORD
+default-character-set = utf8
+</code></pre><h3 id="create-database"><a href="#Create_database" class="headerlink" title="Create database"></a>Create database</h3><pre><code>mysql -u root -p
+create database dbname;
+</code></pre><h3 id="migrate-data"><a href="#Migrate_data" class="headerlink" title="Migrate data"></a>Migrate data</h3><pre><code>python manage.py migrate
+</code></pre><h3 id="run-server"><a href="#Run_server" class="headerlink" title="Run server"></a>Run server</h3><pre><code>python manage.py runserver
+</code></pre><p>Make sure above commands are running under your virtualenv</p>
+<hr>
+<h2 id="zsh-related-plugins"><a href="#zsh_related_plugins" class="headerlink" title="zsh related plugins"></a>zsh related plugins</h2><pre><code>vim ~/.zshrc
+</code></pre><p>add django plugin as following:</p>
+<pre><code>plugins=(git, django, virtualenv, pip)
+</code></pre>]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="prepare-development-environment-of-django-on-ubuntu"><a href="#Prepare_development_environment_of_Django_on_Ubuntu" class="headerlin]]>
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Actions After Installed Linux Mint 17.2]]></title>
+    <link href="http://yoursite.com/2015/12/22/after_install_mint_17/"/>
+    <id>http://yoursite.com/2015/12/22/after_install_mint_17/</id>
+    <published>2015-12-22T05:42:08.796Z</published>
+    <updated>2015-12-22T05:42:08.756Z</updated>
+    <content type="html"><![CDATA[<h1 id="actions-after-installed-linux-mint-172"><a href="#Actions_After_Installed_Linux_Mint_17-2" class="headerlink" title="Actions After Installed Linux Mint 17.2"></a>Actions After Installed Linux Mint 17.2</h1><ol>
+<li>Update package source list with Software Sources</li>
+<li>Download and install Sogou Pinyin (logout and then config)</li>
+<li>Install Google Chrome</li>
+<li>Install curl with apt-get</li>
+<li>Install virtualenv &amp; Django</li>
+<li>Install Gvim with spf13</li>
+</ol>
+<h2 id="install-google-chrome"><a href="#Install_Google_Chrome" class="headerlink" title="Install Google Chrome"></a>Install Google Chrome</h2><pre><code>wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+sudo sh -c &apos;echo &quot;deb http://dl.google.com/linux/chrome/deb/ stable main&quot; &gt;&gt; /etc/apt/sources.list.d/google-chrome.list&apos;
+sudo apt-get update 
+sudo apt-get install google-chrome-stable 
+</code></pre><h2 id="install-virtualenv"><a href="#Install_virtualenv" class="headerlink" title="Install virtualenv"></a>Install virtualenv</h2><pre><code>wget https://bootstrap.pypa.io/get-pip.py
+sudo python3 get-pip.py 
+sudo pip install virtualenv
+</code></pre><h2 id="configure-virtualenv-install-django"><a href="#Configure_virtualenv__26amp_3B_Install_Django" class="headerlink" title="Configure virtualenv &amp; Install Django"></a>Configure virtualenv &amp; Install Django</h2><pre><code>virtualenv ./virtualenv/py3
+cd virtualenv/py3/
+source bin/activate
+pip install Django
+</code></pre><h2 id="install-gvim-with-spf13"><a href="#Install_Gvim_with_spf13" class="headerlink" title="Install Gvim with spf13"></a>Install Gvim with spf13</h2><pre><code>sudo apt-get install vim-gnome 
+curl http://j.mp/spf13-vim3 -L -o - | sh
+</code></pre>]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="actions-after-installed-linux-mint-172"><a href="#Actions_After_Installed_Linux_Mint_17-2" class="headerlink" title="Actions After I]]>
+    </summary>
+    
+  </entry>
+  
+</feed>
