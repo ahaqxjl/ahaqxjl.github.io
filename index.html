@@ -41,7 +41,7 @@
 
 
 
-  <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml" />
+  <link rel="alternate" href="/atom.xml" title="ToGeek" type="application/atom+xml" />
 
 
 
@@ -55,12 +55,12 @@
 
 <meta name="description">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:title" content="ToGeek">
+<meta property="og:url" content="http://ahaqxjl.github.io/index.html">
+<meta property="og:site_name" content="ToGeek">
 <meta property="og:description">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="ToGeek">
 <meta name="twitter:description">
 
 
@@ -73,7 +73,7 @@
   };
 </script>
 
-  <title> Hexo </title>
+  <title> ToGeek </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -106,7 +106,7 @@
   <div class="custom-logo-site-title">
     <a href="/"  class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <span class="site-title">Hexo</span>
+      <span class="site-title">ToGeek</span>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
@@ -211,109 +211,6 @@
             
               
                 
-                <a class="post-title-link" href="/2015/12/22/virtualenvwrapper/" itemprop="url">
-                  Virtualenvwrapper tutorial
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            Posted on
-            <time itemprop="dateCreated" datetime="2015-12-22T13:56:59+08:00" content="2015-12-22">
-              2015-12-22
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-              <h2 id="install"><a href="#Install" class="headerlink" title="Install"></a>Install</h2><pre><code>sudo pip install virtualenvwrapper
-</code></pre><h2 id="configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h2><p>Add following codes into shell profile, such as ~/.zshrc</p>
-<pre><code># virtualenvwrapper configuration
-# use python3 instead of python
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-# specify virtualenv path
-export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
-# virtualenvs path
-export WORKON_HOME=$HOME/virtualenv
-# projects path
-export PROJECT_HOME=$HOME/Projects
-# activate virtualenvwrapper on startup shell
-source /usr/local/bin/virtualenvwrapper.sh
-</code></pre><p>After that, execute <code>source ~/.zshrc</code> to make configuration work.</p>
-<h2 id="use-virtualenvwrapper"><a href="#Use_virtualenvwrapper" class="headerlink" title="Use virtualenvwrapper"></a>Use virtualenvwrapper</h2><h3 id="create-virtualenv"><a href="#Create_virtualenv" class="headerlink" title="Create virtualenv"></a>Create virtualenv</h3><pre><code>mkvirtualenv envname
-</code></pre><p>Then it will create a virtualenv in the $WORKON_HOME path</p>
-<h3 id="activate-virtualenv"><a href="#Activate_virtualenv" class="headerlink" title="Activate virtualenv"></a>Activate virtualenv</h3><pre><code>workon envname
-</code></pre><p>use <code>deactivate</code> to exit virtualenv</p>
-<h3 id="list-all-virtualenv"><a href="#List_all_virtualenv" class="headerlink" title="List all virtualenv"></a>List all virtualenv</h3><pre><code>lsvirtualenv
-</code></pre><h3 id="execute-command-on-all-virtualenvs"><a href="#Execute_command_on_all_virtualenvs" class="headerlink" title="Execute command on all virtualenvs"></a>Execute command on all virtualenvs</h3><pre><code>allvirtualenv command
-</code></pre><p>such as:</p>
-<pre><code># update pip for all virtualenvs
-allvirtualenv pip install -U pip
-</code></pre>
-            
-          </span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
                 <a class="post-title-link" href="/2015/12/22/dev_env_for_django/" itemprop="url">
                   Prepare development environment of Django on Ubuntu
                 </a>
@@ -325,7 +222,7 @@ allvirtualenv pip install -U pip
         <div class="post-meta">
           <span class="post-time">
             Posted on
-            <time itemprop="dateCreated" datetime="2015-12-22T13:56:30+08:00" content="2015-12-22">
+            <time itemprop="dateCreated" datetime="2015-12-22T16:00:22+08:00" content="2015-12-22">
               2015-12-22
             </time>
           </span>
@@ -432,6 +329,109 @@ create database dbname;
             
               
                 
+                <a class="post-title-link" href="/2015/12/22/virtualenvwrapper/" itemprop="url">
+                  Virtualenvwrapper tutorial
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            Posted on
+            <time itemprop="dateCreated" datetime="2015-12-22T15:59:24+08:00" content="2015-12-22">
+              2015-12-22
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <h2 id="install"><a href="#Install" class="headerlink" title="Install"></a>Install</h2><pre><code>sudo pip install virtualenvwrapper
+</code></pre><h2 id="configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h2><p>Add following codes into shell profile, such as ~/.zshrc</p>
+<pre><code># virtualenvwrapper configuration
+# use python3 instead of python
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+# specify virtualenv path
+export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
+# virtualenvs path
+export WORKON_HOME=$HOME/virtualenv
+# projects path
+export PROJECT_HOME=$HOME/Projects
+# activate virtualenvwrapper on startup shell
+source /usr/local/bin/virtualenvwrapper.sh
+</code></pre><p>After that, execute <code>source ~/.zshrc</code> to make configuration work.</p>
+<h2 id="use-virtualenvwrapper"><a href="#Use_virtualenvwrapper" class="headerlink" title="Use virtualenvwrapper"></a>Use virtualenvwrapper</h2><h3 id="create-virtualenv"><a href="#Create_virtualenv" class="headerlink" title="Create virtualenv"></a>Create virtualenv</h3><pre><code>mkvirtualenv envname
+</code></pre><p>Then it will create a virtualenv in the $WORKON_HOME path</p>
+<h3 id="activate-virtualenv"><a href="#Activate_virtualenv" class="headerlink" title="Activate virtualenv"></a>Activate virtualenv</h3><pre><code>workon envname
+</code></pre><p>use <code>deactivate</code> to exit virtualenv</p>
+<h3 id="list-all-virtualenv"><a href="#List_all_virtualenv" class="headerlink" title="List all virtualenv"></a>List all virtualenv</h3><pre><code>lsvirtualenv
+</code></pre><h3 id="execute-command-on-all-virtualenvs"><a href="#Execute_command_on_all_virtualenvs" class="headerlink" title="Execute command on all virtualenvs"></a>Execute command on all virtualenvs</h3><pre><code>allvirtualenv command
+</code></pre><p>such as:</p>
+<pre><code># update pip for all virtualenvs
+allvirtualenv pip install -U pip
+</code></pre>
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2015/12/22/after_install_mint_17/" itemprop="url">
                   Actions After Installed Linux Mint 17.2
                 </a>
@@ -443,7 +443,7 @@ create database dbname;
         <div class="post-meta">
           <span class="post-time">
             Posted on
-            <time itemprop="dateCreated" datetime="2015-12-22T13:42:08+08:00" content="2015-12-22">
+            <time itemprop="dateCreated" datetime="2015-12-22T15:54:19+08:00" content="2015-12-22">
               2015-12-22
             </time>
           </span>
@@ -568,7 +568,7 @@ curl http://j.mp/spf13-vim3 -L -o - | sh
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">0</span>
+              <span class="site-state-item-count">6</span>
               <span class="site-state-item-name">tags</span>
               </a>
           </div>

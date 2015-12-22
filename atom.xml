@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title><![CDATA[Hexo]]></title>
+  <title><![CDATA[ToGeek]]></title>
   
   <link href="/atom.xml" rel="self"/>
-  <link href="http://yoursite.com/"/>
-  <updated>2015-12-22T05:56:59.104Z</updated>
-  <id>http://yoursite.com/</id>
+  <link href="http://ahaqxjl.github.io/"/>
+  <updated>2015-12-22T08:00:22.819Z</updated>
+  <id>http://ahaqxjl.github.io/</id>
   
   <author>
     <name><![CDATA[Jordan Xu]]></name>
@@ -15,48 +15,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[Virtualenvwrapper tutorial]]></title>
-    <link href="http://yoursite.com/2015/12/22/virtualenvwrapper/"/>
-    <id>http://yoursite.com/2015/12/22/virtualenvwrapper/</id>
-    <published>2015-12-22T05:56:59.148Z</published>
-    <updated>2015-12-22T05:56:59.104Z</updated>
-    <content type="html"><![CDATA[<h2 id="install"><a href="#Install" class="headerlink" title="Install"></a>Install</h2><pre><code>sudo pip install virtualenvwrapper
-</code></pre><h2 id="configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h2><p>Add following codes into shell profile, such as ~/.zshrc</p>
-<pre><code># virtualenvwrapper configuration
-# use python3 instead of python
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-# specify virtualenv path
-export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
-# virtualenvs path
-export WORKON_HOME=$HOME/virtualenv
-# projects path
-export PROJECT_HOME=$HOME/Projects
-# activate virtualenvwrapper on startup shell
-source /usr/local/bin/virtualenvwrapper.sh
-</code></pre><p>After that, execute <code>source ~/.zshrc</code> to make configuration work.</p>
-<h2 id="use-virtualenvwrapper"><a href="#Use_virtualenvwrapper" class="headerlink" title="Use virtualenvwrapper"></a>Use virtualenvwrapper</h2><h3 id="create-virtualenv"><a href="#Create_virtualenv" class="headerlink" title="Create virtualenv"></a>Create virtualenv</h3><pre><code>mkvirtualenv envname
-</code></pre><p>Then it will create a virtualenv in the $WORKON_HOME path</p>
-<h3 id="activate-virtualenv"><a href="#Activate_virtualenv" class="headerlink" title="Activate virtualenv"></a>Activate virtualenv</h3><pre><code>workon envname
-</code></pre><p>use <code>deactivate</code> to exit virtualenv</p>
-<h3 id="list-all-virtualenv"><a href="#List_all_virtualenv" class="headerlink" title="List all virtualenv"></a>List all virtualenv</h3><pre><code>lsvirtualenv
-</code></pre><h3 id="execute-command-on-all-virtualenvs"><a href="#Execute_command_on_all_virtualenvs" class="headerlink" title="Execute command on all virtualenvs"></a>Execute command on all virtualenvs</h3><pre><code>allvirtualenv command
-</code></pre><p>such as:</p>
-<pre><code># update pip for all virtualenvs
-allvirtualenv pip install -U pip
-</code></pre>]]></content>
-    <summary type="html">
-    <![CDATA[<h2 id="install"><a href="#Install" class="headerlink" title="Install"></a>Install</h2><pre><code>sudo pip install virtualenvwrapper
-</code>]]>
-    </summary>
-    
-  </entry>
-  
-  <entry>
     <title><![CDATA[Prepare development environment of Django on Ubuntu]]></title>
-    <link href="http://yoursite.com/2015/12/22/dev_env_for_django/"/>
-    <id>http://yoursite.com/2015/12/22/dev_env_for_django/</id>
-    <published>2015-12-22T05:56:30.724Z</published>
-    <updated>2015-12-22T05:56:30.692Z</updated>
+    <link href="http://ahaqxjl.github.io/2015/12/22/dev_env_for_django/"/>
+    <id>http://ahaqxjl.github.io/2015/12/22/dev_env_for_django/</id>
+    <published>2015-12-22T08:00:22.855Z</published>
+    <updated>2015-12-22T08:00:22.819Z</updated>
     <content type="html"><![CDATA[<h1 id="prepare-development-environment-of-django-on-ubuntu"><a href="#Prepare_development_environment_of_Django_on_Ubuntu" class="headerlink" title="Prepare development environment of Django on Ubuntu"></a>Prepare development environment of Django on Ubuntu</h1><h2 id="install-lamp"><a href="#Install_LAMP" class="headerlink" title="Install LAMP"></a>Install LAMP</h2><p>Django will run on MySQL db, to install MySQL db, tasksel is recommended way to install LAMP server.</p>
 <pre><code>sudo apt-get install tasksel
 sudo tasksel
@@ -100,14 +63,63 @@ create database dbname;
     <![CDATA[<h1 id="prepare-development-environment-of-django-on-ubuntu"><a href="#Prepare_development_environment_of_Django_on_Ubuntu" class="headerlin]]>
     </summary>
     
+      <category term="Django" scheme="http://ahaqxjl.github.io/tags/Django/"/>
+    
+      <category term="Linux" scheme="http://ahaqxjl.github.io/tags/Linux/"/>
+    
+      <category term="Mint" scheme="http://ahaqxjl.github.io/tags/Mint/"/>
+    
+      <category term="Ubuntu" scheme="http://ahaqxjl.github.io/tags/Ubuntu/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Virtualenvwrapper tutorial]]></title>
+    <link href="http://ahaqxjl.github.io/2015/12/22/virtualenvwrapper/"/>
+    <id>http://ahaqxjl.github.io/2015/12/22/virtualenvwrapper/</id>
+    <published>2015-12-22T07:59:24.499Z</published>
+    <updated>2015-12-22T07:59:24.459Z</updated>
+    <content type="html"><![CDATA[<h2 id="install"><a href="#Install" class="headerlink" title="Install"></a>Install</h2><pre><code>sudo pip install virtualenvwrapper
+</code></pre><h2 id="configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h2><p>Add following codes into shell profile, such as ~/.zshrc</p>
+<pre><code># virtualenvwrapper configuration
+# use python3 instead of python
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+# specify virtualenv path
+export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
+# virtualenvs path
+export WORKON_HOME=$HOME/virtualenv
+# projects path
+export PROJECT_HOME=$HOME/Projects
+# activate virtualenvwrapper on startup shell
+source /usr/local/bin/virtualenvwrapper.sh
+</code></pre><p>After that, execute <code>source ~/.zshrc</code> to make configuration work.</p>
+<h2 id="use-virtualenvwrapper"><a href="#Use_virtualenvwrapper" class="headerlink" title="Use virtualenvwrapper"></a>Use virtualenvwrapper</h2><h3 id="create-virtualenv"><a href="#Create_virtualenv" class="headerlink" title="Create virtualenv"></a>Create virtualenv</h3><pre><code>mkvirtualenv envname
+</code></pre><p>Then it will create a virtualenv in the $WORKON_HOME path</p>
+<h3 id="activate-virtualenv"><a href="#Activate_virtualenv" class="headerlink" title="Activate virtualenv"></a>Activate virtualenv</h3><pre><code>workon envname
+</code></pre><p>use <code>deactivate</code> to exit virtualenv</p>
+<h3 id="list-all-virtualenv"><a href="#List_all_virtualenv" class="headerlink" title="List all virtualenv"></a>List all virtualenv</h3><pre><code>lsvirtualenv
+</code></pre><h3 id="execute-command-on-all-virtualenvs"><a href="#Execute_command_on_all_virtualenvs" class="headerlink" title="Execute command on all virtualenvs"></a>Execute command on all virtualenvs</h3><pre><code>allvirtualenv command
+</code></pre><p>such as:</p>
+<pre><code># update pip for all virtualenvs
+allvirtualenv pip install -U pip
+</code></pre>]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="install"><a href="#Install" class="headerlink" title="Install"></a>Install</h2><pre><code>sudo pip install virtualenvwrapper
+</code>]]>
+    </summary>
+    
+      <category term="virtualenv" scheme="http://ahaqxjl.github.io/tags/virtualenv/"/>
+    
+      <category term="virtualenvwrapper" scheme="http://ahaqxjl.github.io/tags/virtualenvwrapper/"/>
+    
   </entry>
   
   <entry>
     <title><![CDATA[Actions After Installed Linux Mint 17.2]]></title>
-    <link href="http://yoursite.com/2015/12/22/after_install_mint_17/"/>
-    <id>http://yoursite.com/2015/12/22/after_install_mint_17/</id>
-    <published>2015-12-22T05:42:08.796Z</published>
-    <updated>2015-12-22T05:42:08.756Z</updated>
+    <link href="http://ahaqxjl.github.io/2015/12/22/after_install_mint_17/"/>
+    <id>http://ahaqxjl.github.io/2015/12/22/after_install_mint_17/</id>
+    <published>2015-12-22T07:54:19.191Z</published>
+    <updated>2015-12-22T07:54:19.151Z</updated>
     <content type="html"><![CDATA[<h1 id="actions-after-installed-linux-mint-172"><a href="#Actions_After_Installed_Linux_Mint_17-2" class="headerlink" title="Actions After Installed Linux Mint 17.2"></a>Actions After Installed Linux Mint 17.2</h1><ol>
 <li>Update package source list with Software Sources</li>
 <li>Download and install Sogou Pinyin (logout and then config)</li>
@@ -133,6 +145,10 @@ curl http://j.mp/spf13-vim3 -L -o - | sh
     <summary type="html">
     <![CDATA[<h1 id="actions-after-installed-linux-mint-172"><a href="#Actions_After_Installed_Linux_Mint_17-2" class="headerlink" title="Actions After I]]>
     </summary>
+    
+      <category term="Linux" scheme="http://ahaqxjl.github.io/tags/Linux/"/>
+    
+      <category term="Mint" scheme="http://ahaqxjl.github.io/tags/Mint/"/>
     
   </entry>
   
