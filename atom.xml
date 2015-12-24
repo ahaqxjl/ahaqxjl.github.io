@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://ahaqxjl.github.io/"/>
-  <updated>2015-12-22T08:00:22.819Z</updated>
+  <updated>2015-12-24T08:18:42.271Z</updated>
   <id>http://ahaqxjl.github.io/</id>
   
   <author>
@@ -13,6 +13,59 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Virtualenvwrapper tutorial]]></title>
+    <link href="http://ahaqxjl.github.io/2015/12/24/virtualenvwrapper/"/>
+    <id>http://ahaqxjl.github.io/2015/12/24/virtualenvwrapper/</id>
+    <published>2015-12-24T08:18:42.271Z</published>
+    <updated>2015-12-24T08:18:42.271Z</updated>
+    <content type="html"><![CDATA[<h2 id="install"><a href="#Install" class="headerlink" title="Install"></a>Install</h2><pre><code>sudo pip install virtualenvwrapper
+</code></pre><h2 id="configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h2><p>Add following codes into shell profile, such as ~/.zshrc</p>
+<pre><code># virtualenvwrapper configuration
+# use python3 instead of python
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+# specify virtualenv path
+export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
+# virtualenvs path
+export WORKON_HOME=$HOME/virtualenv
+# projects path
+export PROJECT_HOME=$HOME/Projects
+# activate virtualenvwrapper on startup shell
+source /usr/local/bin/virtualenvwrapper.sh
+</code></pre><p>After that, execute <code>source ~/.zshrc</code> to make configuration work.</p>
+<h2 id="use-virtualenvwrapper"><a href="#Use_virtualenvwrapper" class="headerlink" title="Use virtualenvwrapper"></a>Use virtualenvwrapper</h2><h3 id="create-virtualenv"><a href="#Create_virtualenv" class="headerlink" title="Create virtualenv"></a>Create virtualenv</h3><pre><code>mkvirtualenv envname
+</code></pre><p>Then it will create a virtualenv in the $WORKON_HOME path</p>
+<h3 id="activate-virtualenv"><a href="#Activate_virtualenv" class="headerlink" title="Activate virtualenv"></a>Activate virtualenv</h3><pre><code>workon envname
+</code></pre><p>use <code>deactivate</code> to exit virtualenv</p>
+<h3 id="list-all-virtualenv"><a href="#List_all_virtualenv" class="headerlink" title="List all virtualenv"></a>List all virtualenv</h3><pre><code>lsvirtualenv
+</code></pre><h3 id="execute-command-on-all-virtualenvs"><a href="#Execute_command_on_all_virtualenvs" class="headerlink" title="Execute command on all virtualenvs"></a>Execute command on all virtualenvs</h3><pre><code>allvirtualenv command
+</code></pre><p>such as:</p>
+<pre><code># update pip for all virtualenvs
+allvirtualenv pip install -U pip
+</code></pre><h3 id="navigate"><a href="#Navigate" class="headerlink" title="Navigate"></a>Navigate</h3><pre><code># Open path of current virtualenv
+cdvirtualenv
+# Open path of site packages of current vritualenv
+cdsitepackages
+# List all site packages of current virtualenv
+lssitepackages
+# connect working project with current virtualenv
+setvirtualenvproject
+# go to working directory of project connected to current virtualenv
+cdproject
+</code></pre><h3 id="get-help"><a href="#Get_help" class="headerlink" title="Get help"></a>Get help</h3><p>List all commands and description of virtualenvwrapper</p>
+<pre><code>virtualenvwrapper
+</code></pre>]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="install"><a href="#Install" class="headerlink" title="Install"></a>Install</h2><pre><code>sudo pip install virtualenvwrapper
+</code>]]>
+    </summary>
+    
+      <category term="virtualenv" scheme="http://ahaqxjl.github.io/tags/virtualenv/"/>
+    
+      <category term="virtualenvwrapper" scheme="http://ahaqxjl.github.io/tags/virtualenvwrapper/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Prepare development environment of Django on Ubuntu]]></title>
@@ -70,47 +123,6 @@ create database dbname;
       <category term="Mint" scheme="http://ahaqxjl.github.io/tags/Mint/"/>
     
       <category term="Ubuntu" scheme="http://ahaqxjl.github.io/tags/Ubuntu/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Virtualenvwrapper tutorial]]></title>
-    <link href="http://ahaqxjl.github.io/2015/12/22/virtualenvwrapper/"/>
-    <id>http://ahaqxjl.github.io/2015/12/22/virtualenvwrapper/</id>
-    <published>2015-12-22T07:59:24.499Z</published>
-    <updated>2015-12-22T07:59:24.459Z</updated>
-    <content type="html"><![CDATA[<h2 id="install"><a href="#Install" class="headerlink" title="Install"></a>Install</h2><pre><code>sudo pip install virtualenvwrapper
-</code></pre><h2 id="configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h2><p>Add following codes into shell profile, such as ~/.zshrc</p>
-<pre><code># virtualenvwrapper configuration
-# use python3 instead of python
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-# specify virtualenv path
-export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
-# virtualenvs path
-export WORKON_HOME=$HOME/virtualenv
-# projects path
-export PROJECT_HOME=$HOME/Projects
-# activate virtualenvwrapper on startup shell
-source /usr/local/bin/virtualenvwrapper.sh
-</code></pre><p>After that, execute <code>source ~/.zshrc</code> to make configuration work.</p>
-<h2 id="use-virtualenvwrapper"><a href="#Use_virtualenvwrapper" class="headerlink" title="Use virtualenvwrapper"></a>Use virtualenvwrapper</h2><h3 id="create-virtualenv"><a href="#Create_virtualenv" class="headerlink" title="Create virtualenv"></a>Create virtualenv</h3><pre><code>mkvirtualenv envname
-</code></pre><p>Then it will create a virtualenv in the $WORKON_HOME path</p>
-<h3 id="activate-virtualenv"><a href="#Activate_virtualenv" class="headerlink" title="Activate virtualenv"></a>Activate virtualenv</h3><pre><code>workon envname
-</code></pre><p>use <code>deactivate</code> to exit virtualenv</p>
-<h3 id="list-all-virtualenv"><a href="#List_all_virtualenv" class="headerlink" title="List all virtualenv"></a>List all virtualenv</h3><pre><code>lsvirtualenv
-</code></pre><h3 id="execute-command-on-all-virtualenvs"><a href="#Execute_command_on_all_virtualenvs" class="headerlink" title="Execute command on all virtualenvs"></a>Execute command on all virtualenvs</h3><pre><code>allvirtualenv command
-</code></pre><p>such as:</p>
-<pre><code># update pip for all virtualenvs
-allvirtualenv pip install -U pip
-</code></pre>]]></content>
-    <summary type="html">
-    <![CDATA[<h2 id="install"><a href="#Install" class="headerlink" title="Install"></a>Install</h2><pre><code>sudo pip install virtualenvwrapper
-</code>]]>
-    </summary>
-    
-      <category term="virtualenv" scheme="http://ahaqxjl.github.io/tags/virtualenv/"/>
-    
-      <category term="virtualenvwrapper" scheme="http://ahaqxjl.github.io/tags/virtualenvwrapper/"/>
     
   </entry>
   
