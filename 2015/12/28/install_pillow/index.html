@@ -35,7 +35,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Django,Linux,Mint,Ubuntu," />
+  <meta name="keywords" content="Pillow," />
 
 
 
@@ -53,22 +53,22 @@
 
 
 
-<meta name="description" content="Prepare development environment of Django on UbuntuInstall LAMPDjango will run on MySQL db, to install MySQL db, tasksel is recommended way to install LAMP server.
-sudo apt-get install tasksel
-sudo ta">
+<meta name="description" content="Install Pillowpip install Pillow
+error while installingValueError: &amp;#x2013;enable-jpeg requested but jpeg not found, aborting.
+sudo apt-get install libjpeg8 libjpeg62-dev libfreetype6 libfreetype6-dev">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Prepare development environment of Django on Ubuntu">
-<meta property="og:url" content="http://ahaqxjl.github.io/2015/12/22/dev_env_for_django/index.html">
+<meta property="og:title" content="Install Pillow">
+<meta property="og:url" content="http://ahaqxjl.github.io/2015/12/28/install_pillow/index.html">
 <meta property="og:site_name" content="ToGeek">
-<meta property="og:description" content="Prepare development environment of Django on UbuntuInstall LAMPDjango will run on MySQL db, to install MySQL db, tasksel is recommended way to install LAMP server.
-sudo apt-get install tasksel
-sudo ta">
-<meta property="og:updated_time" content="2015-12-22T08:00:22.819Z">
+<meta property="og:description" content="Install Pillowpip install Pillow
+error while installingValueError: &amp;#x2013;enable-jpeg requested but jpeg not found, aborting.
+sudo apt-get install libjpeg8 libjpeg62-dev libfreetype6 libfreetype6-dev">
+<meta property="og:updated_time" content="2015-12-28T08:01:54.933Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Prepare development environment of Django on Ubuntu">
-<meta name="twitter:description" content="Prepare development environment of Django on UbuntuInstall LAMPDjango will run on MySQL db, to install MySQL db, tasksel is recommended way to install LAMP server.
-sudo apt-get install tasksel
-sudo ta">
+<meta name="twitter:title" content="Install Pillow">
+<meta name="twitter:description" content="Install Pillowpip install Pillow
+error while installingValueError: &amp;#x2013;enable-jpeg requested but jpeg not found, aborting.
+sudo apt-get install libjpeg8 libjpeg62-dev libfreetype6 libfreetype6-dev">
 
 
 
@@ -80,7 +80,7 @@ sudo ta">
   };
 </script>
 
-  <title> Prepare development environment of Django on Ubuntu | ToGeek </title>
+  <title> Install Pillow | ToGeek </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -200,7 +200,7 @@ sudo ta">
             
             
               
-                Prepare development environment of Django on Ubuntu
+                Install Pillow
               
             
           </h1>
@@ -209,8 +209,8 @@ sudo ta">
         <div class="post-meta">
           <span class="post-time">
             Posted on
-            <time itemprop="dateCreated" datetime="2015-12-22T16:00:22+08:00" content="2015-12-22">
-              2015-12-22
+            <time itemprop="dateCreated" datetime="2015-12-28T16:01:54+08:00" content="2015-12-28">
+              2015-12-28
             </time>
           </span>
 
@@ -233,44 +233,9 @@ sudo ta">
       
 
       
-        <span itemprop="articleBody"><h1 id="prepare-development-environment-of-django-on-ubuntu"><a href="#Prepare_development_environment_of_Django_on_Ubuntu" class="headerlink" title="Prepare development environment of Django on Ubuntu"></a>Prepare development environment of Django on Ubuntu</h1><h2 id="install-lamp"><a href="#Install_LAMP" class="headerlink" title="Install LAMP"></a>Install LAMP</h2><p>Django will run on MySQL db, to install MySQL db, tasksel is recommended way to install LAMP server.</p>
-<pre><code>sudo apt-get install tasksel
-sudo tasksel
-sudo apt-get install phpmyadmin
-</code></pre><h2 id="create-virtualenv"><a href="#Create_virtualenv" class="headerlink" title="Create virtualenv"></a>Create virtualenv</h2><pre><code>virtualenv -p python3 --no-site-packages ~/virtualenv/py3dj8
-</code></pre><p>where <code>-p</code> specify python exec name, <code>--no-site-packages</code> make a clean copy of current python3 environment, <code>~/virtualenv/py3dj8</code> is your virtualenv path for developing django project.</p>
-<h2 id="active-virtualenv"><a href="#Active_virtualenv" class="headerlink" title="Active virtualenv"></a>Active virtualenv</h2><pre><code>source virtualenv/py3dj8/bin/activate
-</code></pre><h2 id="prerequisites"><a href="#Prerequisites" class="headerlink" title="Prerequisites"></a>Prerequisites</h2><pre><code>sudo apt-get install libmysqlclient-dev
-sudo apt-get install python3-dev
-</code></pre><h2 id="install-requirements"><a href="#Install_requirements" class="headerlink" title="Install requirements"></a>Install requirements</h2><pre><code>pip install -r requirements.txt
-</code></pre><h2 id="test"><a href="#Test" class="headerlink" title="Test"></a>Test</h2><h3 id="create-test-project"><a href="#Create_test_project" class="headerlink" title="Create test project"></a>Create test project</h3><pre><code>mkdir projectpath
-cd projectpath
-django-admin startproject projectname
-</code></pre><h3 id="configure-database-settings"><a href="#Configure_database_settings" class="headerlink" title="Configure database settings"></a>Configure database settings</h3><pre><code>vim projectname/projectname/settings.py
-</code></pre><p>Change DataBase settings as following:</p>
-<pre><code>DATABASES = {
-    &apos;default&apos;: {
-        &apos;ENGINE&apos;: &apos;django.db.backends.mysql&apos;,
-        &apos;OPTIONS&apos;: {
-            &apos;read_default_file&apos;: &apos;/path/to/my.cnf&apos;,
-        },
-    }
-}
-</code></pre><p>my.cnf:</p>
-<pre><code>[client]
-database = NAME
-user = USER
-password = PASSWORD
-default-character-set = utf8
-</code></pre><h3 id="create-database"><a href="#Create_database" class="headerlink" title="Create database"></a>Create database</h3><pre><code>mysql -u root -p
-create database dbname;
-</code></pre><h3 id="migrate-data"><a href="#Migrate_data" class="headerlink" title="Migrate data"></a>Migrate data</h3><pre><code>python manage.py migrate
-</code></pre><h3 id="run-server"><a href="#Run_server" class="headerlink" title="Run server"></a>Run server</h3><pre><code>python manage.py runserver
-</code></pre><p>Make sure above commands are running under your virtualenv</p>
-<hr>
-<h2 id="zsh-related-plugins"><a href="#zsh_related_plugins" class="headerlink" title="zsh related plugins"></a>zsh related plugins</h2><pre><code>vim ~/.zshrc
-</code></pre><p>add django plugin as following:</p>
-<pre><code>plugins=(git, django, virtualenv, pip)
+        <span itemprop="articleBody"><h1 id="install-pillow"><a href="#Install_Pillow" class="headerlink" title="Install Pillow"></a>Install Pillow</h1><pre><code>pip install Pillow
+</code></pre><h2 id="error-while-installing"><a href="#error_while_installing" class="headerlink" title="error while installing"></a>error while installing</h2><p>ValueError: &#x2013;enable-jpeg requested but jpeg not found, aborting.</p>
+<pre><code>sudo apt-get install libjpeg8 libjpeg62-dev libfreetype6 libfreetype6-dev
 </code></pre></span>
       
     </div>
@@ -279,13 +244,7 @@ create database dbname;
       
         <div class="post-tags">
           
-            <a href="/tags/Django/" rel="tag">#Django</a>
-          
-            <a href="/tags/Linux/" rel="tag">#Linux</a>
-          
-            <a href="/tags/Mint/" rel="tag">#Mint</a>
-          
-            <a href="/tags/Ubuntu/" rel="tag">#Ubuntu</a>
+            <a href="/tags/Pillow/" rel="tag">#Pillow</a>
           
         </div>
       
@@ -294,17 +253,13 @@ create database dbname;
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/12/22/after_install_mint_17/" rel="next" title="Actions After Installed Linux Mint 17.2">
-                <i class="fa fa-chevron-left"></i> Actions After Installed Linux Mint 17.2
+              <a href="/2015/12/24/virtualenvwrapper/" rel="next" title="Virtualenvwrapper tutorial">
+                <i class="fa fa-chevron-left"></i> Virtualenvwrapper tutorial
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2015/12/24/virtualenvwrapper/" rel="prev" title="Virtualenvwrapper tutorial">
-                Virtualenvwrapper tutorial <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -425,7 +380,7 @@ create database dbname;
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#prepare-development-environment-of-django-on-ubuntu"><span class="nav-number">1.</span> <span class="nav-text">Prepare development environment of Django on Ubuntu</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#install-lamp"><span class="nav-number">1.1.</span> <span class="nav-text">Install LAMP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#create-virtualenv"><span class="nav-number">1.2.</span> <span class="nav-text">Create virtualenv</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#active-virtualenv"><span class="nav-number">1.3.</span> <span class="nav-text">Active virtualenv</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#prerequisites"><span class="nav-number">1.4.</span> <span class="nav-text">Prerequisites</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#install-requirements"><span class="nav-number">1.5.</span> <span class="nav-text">Install requirements</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#test"><span class="nav-number">1.6.</span> <span class="nav-text">Test</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#create-test-project"><span class="nav-number">1.6.1.</span> <span class="nav-text">Create test project</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#configure-database-settings"><span class="nav-number">1.6.2.</span> <span class="nav-text">Configure database settings</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#create-database"><span class="nav-number">1.6.3.</span> <span class="nav-text">Create database</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#migrate-data"><span class="nav-number">1.6.4.</span> <span class="nav-text">Migrate data</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#run-server"><span class="nav-number">1.6.5.</span> <span class="nav-text">Run server</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#zsh-related-plugins"><span class="nav-number">1.7.</span> <span class="nav-text">zsh related plugins</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#install-pillow"><span class="nav-number">1.</span> <span class="nav-text">Install Pillow</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#error-while-installing"><span class="nav-number">1.1.</span> <span class="nav-text">error while installing</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
