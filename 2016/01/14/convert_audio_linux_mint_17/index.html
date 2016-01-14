@@ -35,7 +35,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="virtualenv,virtualenvwrapper," />
+  <meta name="keywords" content="Linux,Mint,audio,ffmpeg," />
 
 
 
@@ -53,28 +53,34 @@
 
 
 
-<meta name="description" content="Installsudo pip install virtualenvwrapper
-ConfigurationAdd following codes into shell profile, such as ~/.zshrc
-# virtualenvwrapper configuration
-# use python3 instead of python
-export VIRTUALENVWRAPP">
+<meta name="description" content="Install ffmpegadd ppa
+sudo apt-add-repository ppa:mc3man/trusty-media
+install ffmpeg
+sudo apt-get update
+sudo apt-get install ffmpeg
+Convert to mp3ffmpeg -i input.ape -b:a 320k output.mp3
+-b:a 320k me">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Virtualenvwrapper tutorial">
-<meta property="og:url" content="http://ahaqxjl.github.io/2015/12/24/virtualenvwrapper/index.html">
+<meta property="og:title" content="Convert audio in Linux Mint 17">
+<meta property="og:url" content="http://ahaqxjl.github.io/2016/01/14/convert_audio_linux_mint_17/index.html">
 <meta property="og:site_name" content="ToGeek">
-<meta property="og:description" content="Installsudo pip install virtualenvwrapper
-ConfigurationAdd following codes into shell profile, such as ~/.zshrc
-# virtualenvwrapper configuration
-# use python3 instead of python
-export VIRTUALENVWRAPP">
-<meta property="og:updated_time" content="2015-12-24T08:18:42.271Z">
+<meta property="og:description" content="Install ffmpegadd ppa
+sudo apt-add-repository ppa:mc3man/trusty-media
+install ffmpeg
+sudo apt-get update
+sudo apt-get install ffmpeg
+Convert to mp3ffmpeg -i input.ape -b:a 320k output.mp3
+-b:a 320k me">
+<meta property="og:updated_time" content="2016-01-14T07:45:53.157Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Virtualenvwrapper tutorial">
-<meta name="twitter:description" content="Installsudo pip install virtualenvwrapper
-ConfigurationAdd following codes into shell profile, such as ~/.zshrc
-# virtualenvwrapper configuration
-# use python3 instead of python
-export VIRTUALENVWRAPP">
+<meta name="twitter:title" content="Convert audio in Linux Mint 17">
+<meta name="twitter:description" content="Install ffmpegadd ppa
+sudo apt-add-repository ppa:mc3man/trusty-media
+install ffmpeg
+sudo apt-get update
+sudo apt-get install ffmpeg
+Convert to mp3ffmpeg -i input.ape -b:a 320k output.mp3
+-b:a 320k me">
 
 
 
@@ -86,7 +92,7 @@ export VIRTUALENVWRAPP">
   };
 </script>
 
-  <title> Virtualenvwrapper tutorial | ToGeek </title>
+  <title> Convert audio in Linux Mint 17 | ToGeek </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -206,7 +212,7 @@ export VIRTUALENVWRAPP">
             
             
               
-                Virtualenvwrapper tutorial
+                Convert audio in Linux Mint 17
               
             
           </h1>
@@ -215,8 +221,8 @@ export VIRTUALENVWRAPP">
         <div class="post-meta">
           <span class="post-time">
             Posted on
-            <time itemprop="dateCreated" datetime="2015-12-24T16:18:42+08:00" content="2015-12-24">
-              2015-12-24
+            <time itemprop="dateCreated" datetime="2016-01-14T15:45:53+08:00" content="2016-01-14">
+              2016-01-14
             </time>
           </span>
 
@@ -239,41 +245,14 @@ export VIRTUALENVWRAPP">
       
 
       
-        <span itemprop="articleBody"><h2 id="install"><a href="#Install" class="headerlink" title="Install"></a>Install</h2><pre><code>sudo pip install virtualenvwrapper
-</code></pre><h2 id="configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h2><p>Add following codes into shell profile, such as ~/.zshrc</p>
-<pre><code># virtualenvwrapper configuration
-# use python3 instead of python
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-# specify virtualenv path
-export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
-# virtualenvs path
-export WORKON_HOME=$HOME/virtualenv
-# projects path
-export PROJECT_HOME=$HOME/Projects
-# activate virtualenvwrapper on startup shell
-source /usr/local/bin/virtualenvwrapper.sh
-</code></pre><p>After that, execute <code>source ~/.zshrc</code> to make configuration work.</p>
-<h2 id="use-virtualenvwrapper"><a href="#Use_virtualenvwrapper" class="headerlink" title="Use virtualenvwrapper"></a>Use virtualenvwrapper</h2><h3 id="create-virtualenv"><a href="#Create_virtualenv" class="headerlink" title="Create virtualenv"></a>Create virtualenv</h3><pre><code>mkvirtualenv envname
-</code></pre><p>Then it will create a virtualenv in the $WORKON_HOME path</p>
-<h3 id="activate-virtualenv"><a href="#Activate_virtualenv" class="headerlink" title="Activate virtualenv"></a>Activate virtualenv</h3><pre><code>workon envname
-</code></pre><p>use <code>deactivate</code> to exit virtualenv</p>
-<h3 id="list-all-virtualenv"><a href="#List_all_virtualenv" class="headerlink" title="List all virtualenv"></a>List all virtualenv</h3><pre><code>lsvirtualenv
-</code></pre><h3 id="execute-command-on-all-virtualenvs"><a href="#Execute_command_on_all_virtualenvs" class="headerlink" title="Execute command on all virtualenvs"></a>Execute command on all virtualenvs</h3><pre><code>allvirtualenv command
-</code></pre><p>such as:</p>
-<pre><code># update pip for all virtualenvs
-allvirtualenv pip install -U pip
-</code></pre><h3 id="navigate"><a href="#Navigate" class="headerlink" title="Navigate"></a>Navigate</h3><pre><code># Open path of current virtualenv
-cdvirtualenv
-# Open path of site packages of current vritualenv
-cdsitepackages
-# List all site packages of current virtualenv
-lssitepackages
-# connect working project with current virtualenv
-setvirtualenvproject
-# go to working directory of project connected to current virtualenv
-cdproject
-</code></pre><h3 id="get-help"><a href="#Get_help" class="headerlink" title="Get help"></a>Get help</h3><p>List all commands and description of virtualenvwrapper</p>
-<pre><code>virtualenvwrapper
+        <span itemprop="articleBody"><h1 id="install-ffmpeg"><a href="#Install_ffmpeg" class="headerlink" title="Install ffmpeg"></a>Install ffmpeg</h1><p>add ppa</p>
+<pre><code>sudo apt-add-repository ppa:mc3man/trusty-media
+</code></pre><p>install ffmpeg</p>
+<pre><code>sudo apt-get update
+sudo apt-get install ffmpeg
+</code></pre><h1 id="convert-to-mp3"><a href="#Convert_to_mp3" class="headerlink" title="Convert to mp3"></a>Convert to mp3</h1><pre><code>ffmpeg -i input.ape -b:a 320k output.mp3
+</code></pre><p><code>-b:a 320k</code> means bitrate is 320k</p>
+<h1 id="convert-all-ape-to-mp3"><a href="#convert_all_ape_to_mp3__3A" class="headerlink" title="convert all ape to mp3 :"></a>convert all ape to mp3 :</h1><pre><code>for x in *.ape; do ffmpeg -i $x -b:a 320k ${x%.ape}.mp3; done
 </code></pre></span>
       
     </div>
@@ -282,9 +261,13 @@ cdproject
       
         <div class="post-tags">
           
-            <a href="/tags/virtualenv/" rel="tag">#virtualenv</a>
+            <a href="/tags/Linux/" rel="tag">#Linux</a>
           
-            <a href="/tags/virtualenvwrapper/" rel="tag">#virtualenvwrapper</a>
+            <a href="/tags/Mint/" rel="tag">#Mint</a>
+          
+            <a href="/tags/audio/" rel="tag">#audio</a>
+          
+            <a href="/tags/ffmpeg/" rel="tag">#ffmpeg</a>
           
         </div>
       
@@ -293,17 +276,13 @@ cdproject
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/12/22/dev_env_for_django/" rel="next" title="Prepare development environment of Django on Ubuntu">
-                <i class="fa fa-chevron-left"></i> Prepare development environment of Django on Ubuntu
+              <a href="/2015/12/28/install_pillow/" rel="next" title="Install Pillow">
+                <i class="fa fa-chevron-left"></i> Install Pillow
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2015/12/28/install_pillow/" rel="prev" title="Install Pillow">
-                Install Pillow <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -424,7 +403,7 @@ cdproject
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#install"><span class="nav-number">1.</span> <span class="nav-text">Install</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#configuration"><span class="nav-number">2.</span> <span class="nav-text">Configuration</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#use-virtualenvwrapper"><span class="nav-number">3.</span> <span class="nav-text">Use virtualenvwrapper</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#create-virtualenv"><span class="nav-number">3.1.</span> <span class="nav-text">Create virtualenv</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#activate-virtualenv"><span class="nav-number">3.2.</span> <span class="nav-text">Activate virtualenv</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#list-all-virtualenv"><span class="nav-number">3.3.</span> <span class="nav-text">List all virtualenv</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#execute-command-on-all-virtualenvs"><span class="nav-number">3.4.</span> <span class="nav-text">Execute command on all virtualenvs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#navigate"><span class="nav-number">3.5.</span> <span class="nav-text">Navigate</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#get-help"><span class="nav-number">3.6.</span> <span class="nav-text">Get help</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#install-ffmpeg"><span class="nav-number">1.</span> <span class="nav-text">Install ffmpeg</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#convert-to-mp3"><span class="nav-number">2.</span> <span class="nav-text">Convert to mp3</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#convert-all-ape-to-mp3"><span class="nav-number">3.</span> <span class="nav-text">convert all ape to mp3 :</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

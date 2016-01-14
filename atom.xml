@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://ahaqxjl.github.io/"/>
-  <updated>2015-12-28T08:01:54.933Z</updated>
+  <updated>2016-01-14T07:45:53.157Z</updated>
   <id>http://ahaqxjl.github.io/</id>
   
   <author>
@@ -13,6 +13,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Convert audio in Linux Mint 17]]></title>
+    <link href="http://ahaqxjl.github.io/2016/01/14/convert_audio_linux_mint_17/"/>
+    <id>http://ahaqxjl.github.io/2016/01/14/convert_audio_linux_mint_17/</id>
+    <published>2016-01-14T07:45:53.157Z</published>
+    <updated>2016-01-14T07:45:53.157Z</updated>
+    <content type="html"><![CDATA[<h1 id="install-ffmpeg"><a href="#Install_ffmpeg" class="headerlink" title="Install ffmpeg"></a>Install ffmpeg</h1><p>add ppa</p>
+<pre><code>sudo apt-add-repository ppa:mc3man/trusty-media
+</code></pre><p>install ffmpeg</p>
+<pre><code>sudo apt-get update
+sudo apt-get install ffmpeg
+</code></pre><h1 id="convert-to-mp3"><a href="#Convert_to_mp3" class="headerlink" title="Convert to mp3"></a>Convert to mp3</h1><pre><code>ffmpeg -i input.ape -b:a 320k output.mp3
+</code></pre><p><code>-b:a 320k</code> means bitrate is 320k</p>
+<h1 id="convert-all-ape-to-mp3"><a href="#convert_all_ape_to_mp3__3A" class="headerlink" title="convert all ape to mp3 :"></a>convert all ape to mp3 :</h1><pre><code>for x in *.ape; do ffmpeg -i $x -b:a 320k ${x%.ape}.mp3; done
+</code></pre>]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="install-ffmpeg"><a href="#Install_ffmpeg" class="headerlink" title="Install ffmpeg"></a>Install ffmpeg</h1><p>add ppa</p>
+<pre><code]]>
+    </summary>
+    
+      <category term="Linux" scheme="http://ahaqxjl.github.io/tags/Linux/"/>
+    
+      <category term="Mint" scheme="http://ahaqxjl.github.io/tags/Mint/"/>
+    
+      <category term="audio" scheme="http://ahaqxjl.github.io/tags/audio/"/>
+    
+      <category term="ffmpeg" scheme="http://ahaqxjl.github.io/tags/ffmpeg/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Install Pillow]]></title>
