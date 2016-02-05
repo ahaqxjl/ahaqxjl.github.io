@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://ahaqxjl.github.io/"/>
-  <updated>2016-01-14T07:45:53.157Z</updated>
+  <updated>2016-02-05T03:31:30.586Z</updated>
   <id>http://ahaqxjl.github.io/</id>
   
   <author>
@@ -13,6 +13,56 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Split flac with cue in linux (Linux Mint 17)]]></title>
+    <link href="http://ahaqxjl.github.io/2016/02/05/split_flac_with_cue_linux/"/>
+    <id>http://ahaqxjl.github.io/2016/02/05/split_flac_with_cue_linux/</id>
+    <published>2016-02-05T03:31:30.586Z</published>
+    <updated>2016-02-05T03:31:30.586Z</updated>
+    <content type="html"><![CDATA[<h1 id="install-tools"><a href="#Install_tools" class="headerlink" title="Install tools"></a>Install tools</h1><pre><code>sudo apt-get install cuetools shntool flac mp3info
+</code></pre><h1 id="split"><a href="#Split" class="headerlink" title="Split"></a>Split</h1><pre><code>shntool split -t &quot;%n.%p-%t&quot; -f albumname.cue -o flac albumname.flac -d output
+</code></pre><p><code>%n</code> means track number, <code>%p</code> means artist, <code>%t</code> stands for track title. If <code>-d</code> is not provided, it output split files into current path</p>
+<h1 id="add-tagging"><a href="#Add_tagging" class="headerlink" title="Add tagging"></a>Add tagging</h1><pre><code>cuetag albumname.cue *.flac
+</code></pre><h1 id="convert"><a href="#Convert" class="headerlink" title="Convert"></a>Convert</h1><p><a href="/2016/01/14/convert_audio_linux_mint_17/">Convert audio in Linux Mint 17</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="install-tools"><a href="#Install_tools" class="headerlink" title="Install tools"></a>Install tools</h1><pre><code>sudo apt-get insta]]>
+    </summary>
+    
+      <category term="Linux" scheme="http://ahaqxjl.github.io/tags/Linux/"/>
+    
+      <category term="Mint" scheme="http://ahaqxjl.github.io/tags/Mint/"/>
+    
+      <category term="Ubuntu" scheme="http://ahaqxjl.github.io/tags/Ubuntu/"/>
+    
+      <category term="audio" scheme="http://ahaqxjl.github.io/tags/audio/"/>
+    
+      <category term="lossless" scheme="http://ahaqxjl.github.io/tags/lossless/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[SSH without password]]></title>
+    <link href="http://ahaqxjl.github.io/2016/02/05/ssh_without_password/"/>
+    <id>http://ahaqxjl.github.io/2016/02/05/ssh_without_password/</id>
+    <published>2016-02-05T03:03:54.217Z</published>
+    <updated>2016-02-05T03:03:54.217Z</updated>
+    <content type="html"><![CDATA[<p><strong>All steps are on local machine</strong></p>
+<h1 id="step-1-gen-ssh-key"><a href="#Step_1-_gen_ssh_key" class="headerlink" title="Step 1. gen ssh key"></a>Step 1. gen ssh key</h1><pre><code>ssh-keygen
+</code></pre><h1 id="step-2-pass-key-to-server"><a href="#Step_2-_pass_key_to_server" class="headerlink" title="Step 2. pass key to server"></a>Step 2. pass key to server</h1><pre><code>ssh-copy-id user@serverhost
+</code></pre><h1 id="test"><a href="#Test" class="headerlink" title="Test"></a>Test</h1><pre><code>ssh user@serverhost
+</code></pre>]]></content>
+    <summary type="html">
+    <![CDATA[<p><strong>All steps are on local machine</strong></p>
+<h1 id="step-1-gen-ssh-key"><a href="#Step_1-_gen_ssh_key" class="headerlink" title="]]>
+    </summary>
+    
+      <category term="Linux" scheme="http://ahaqxjl.github.io/tags/Linux/"/>
+    
+      <category term="SSH" scheme="http://ahaqxjl.github.io/tags/SSH/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Convert audio in Linux Mint 17]]></title>
