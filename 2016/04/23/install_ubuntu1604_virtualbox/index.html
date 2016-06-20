@@ -35,7 +35,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Linux,SSH," />
+  <meta name="keywords" content="Linux,Ubuntu,Virtualbox," />
 
 
 
@@ -53,25 +53,19 @@
 
 
 
-<meta name="description" content="All steps are on local machine
-Step 1. gen ssh keyssh-keygen
-Step 2. pass key to serverssh-copy-id user@serverhost
-Testssh user@serverhost">
+<meta name="description" content="Ubuntu 16.04 LTS is released on 21st April 2016, let&amp;#x2019;s try it in Oracle VM VirtualBox Manager. Please note that this article is just as a tutorial for newbies.
+Quick InstallFor quick installati">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SSH without password">
-<meta property="og:url" content="http://ahaqxjl.github.io/2016/02/05/ssh_without_password/index.html">
+<meta property="og:title" content="Install Ubuntu 16.04 on VirtualBox">
+<meta property="og:url" content="http://ahaqxjl.github.io/2016/04/23/install_ubuntu1604_virtualbox/index.html">
 <meta property="og:site_name" content="ToGeek">
-<meta property="og:description" content="All steps are on local machine
-Step 1. gen ssh keyssh-keygen
-Step 2. pass key to serverssh-copy-id user@serverhost
-Testssh user@serverhost">
-<meta property="og:updated_time" content="2016-02-05T03:03:54.217Z">
+<meta property="og:description" content="Ubuntu 16.04 LTS is released on 21st April 2016, let&amp;#x2019;s try it in Oracle VM VirtualBox Manager. Please note that this article is just as a tutorial for newbies.
+Quick InstallFor quick installati">
+<meta property="og:updated_time" content="2016-04-23T12:48:04.070Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SSH without password">
-<meta name="twitter:description" content="All steps are on local machine
-Step 1. gen ssh keyssh-keygen
-Step 2. pass key to serverssh-copy-id user@serverhost
-Testssh user@serverhost">
+<meta name="twitter:title" content="Install Ubuntu 16.04 on VirtualBox">
+<meta name="twitter:description" content="Ubuntu 16.04 LTS is released on 21st April 2016, let&amp;#x2019;s try it in Oracle VM VirtualBox Manager. Please note that this article is just as a tutorial for newbies.
+Quick InstallFor quick installati">
 
 
 
@@ -83,7 +77,7 @@ Testssh user@serverhost">
   };
 </script>
 
-  <title> SSH without password | ToGeek </title>
+  <title> Install Ubuntu 16.04 on VirtualBox | ToGeek </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -203,7 +197,7 @@ Testssh user@serverhost">
             
             
               
-                SSH without password
+                Install Ubuntu 16.04 on VirtualBox
               
             
           </h1>
@@ -212,8 +206,8 @@ Testssh user@serverhost">
         <div class="post-meta">
           <span class="post-time">
             Posted on
-            <time itemprop="dateCreated" datetime="2016-02-05T11:03:54+08:00" content="2016-02-05">
-              2016-02-05
+            <time itemprop="dateCreated" datetime="2016-04-23T20:48:04+08:00" content="2016-04-23">
+              2016-04-23
             </time>
           </span>
 
@@ -236,11 +230,43 @@ Testssh user@serverhost">
       
 
       
-        <span itemprop="articleBody"><p><strong>All steps are on local machine</strong></p>
-<h1 id="step-1-gen-ssh-key"><a href="#Step_1-_gen_ssh_key" class="headerlink" title="Step 1. gen ssh key"></a>Step 1. gen ssh key</h1><pre><code>ssh-keygen
-</code></pre><h1 id="step-2-pass-key-to-server"><a href="#Step_2-_pass_key_to_server" class="headerlink" title="Step 2. pass key to server"></a>Step 2. pass key to server</h1><pre><code>ssh-copy-id user@serverhost
-</code></pre><h1 id="test"><a href="#Test" class="headerlink" title="Test"></a>Test</h1><pre><code>ssh user@serverhost
-</code></pre></span>
+        <span itemprop="articleBody"><p>Ubuntu 16.04 LTS is released on <a href="https://insights.ubuntu.com/2016/04/20/canonical-unveils-6th-lts-release-of-ubuntu-with-16-04/?_ga=1.236707842.248725857.1449202609" target="_blank" rel="external">21st April 2016</a>, let&#x2019;s try it in Oracle VM VirtualBox Manager. Please note that this article is just as a tutorial for newbies.</p>
+<h2 id="quick-install"><a href="#Quick_Install" class="headerlink" title="Quick Install"></a>Quick Install</h2><p>For quick installation, all options are left as default.</p>
+<h3 id="download-installation-image"><a href="#Download_installation_image" class="headerlink" title="Download installation image"></a>Download installation image</h3><p>Download address: <a href="http://www.ubuntu.com/download" target="_blank" rel="external">http://www.ubuntu.com/download</a>.</p>
+<p>Please download 32bit version if your machine is 32 bit, or you&#x2019;re not sure if your machine support 64bit virtualization.</p>
+<h3 id="create-virtual-machine-in-virtualbox"><a href="#Create_virtual_machine_in_Virtualbox" class="headerlink" title="Create virtual machine in Virtualbox"></a>Create virtual machine in Virtualbox</h3><ul>
+<li>Click <code>New</code> tool button in Virtualbox</li>
+<li>Enter <code>Name</code> in <code>Name and operating system</code> dialog of <code>Create Virtual Machine</code>, select <code>Linux</code> in <code>Type</code> dropdown list, and <code>Ubuntu (32-bit)</code> or <code>Ubuntu (64bit)</code> in <code>Version</code>. If you include <code>ubuntu</code> in the <code>Name</code>, <code>Type</code> and <code>Version</code> will be auto selected as above selection. Then click <code>Next</code>.</li>
+<li>Click <code>Next</code> in <code>Memory size</code> dialog if you want the recommended memory size. Or change the size and then continue.</li>
+<li>Click <code>Create</code> in <code>Hard Disk</code> dialog</li>
+<li>Click <code>Next</code> in <code>Hard disk file type</code> dialog to use default VDI.</li>
+<li>Click <code>Next</code> in followed dialog.</li>
+<li>Click <code>Create</code> in <code>File location and size</code> dialog. Change location and size if you want before click the button.</li>
+</ul>
+<p>Now, you will have a new virtual machine in your Virtualbox list with your entered name.</p>
+<h3 id="load-installation-image"><a href="#Load_installation_image" class="headerlink" title="Load installation image"></a>Load installation image</h3><ul>
+<li>Select the new virtual machine, click <code>Settings</code> and there will be Settings dialog.</li>
+<li>Choose <code>Storage</code> on the left of the <code>Settings</code> dialog, then Select <code>Empty</code> under <code>Controller: IDE</code> on the midddle side.</li>
+<li>Click the disk image button on the right, select <code>Choose Virtual Optical Disk File</code>, then locate your downloaded installation image.</li>
+<li>Finally click <code>OK</code> to close <code>Settings</code> dialog.</li>
+</ul>
+<h3 id="install-with-default-options"><a href="#Install_with_default_options" class="headerlink" title="Install with default options"></a>Install with default options</h3><ul>
+<li>Select the new virtual machine if it is not selected, then click <code>Start</code> button on the bool bar.</li>
+<li>There will be <code>Install</code> window, it lists languages on left, and options <code>Try Ubuntu</code> and <code>Install Ubuntu</code> on right, let&#x2019;s select the later option.</li>
+<li>Click <code>Continue</code> in following <code>Preparing to install Ubuntu</code> window.</li>
+<li>Leave all options as default and click <code>Install Now</code> button in <code>Installation type</code> window. <strong>Please select the last option <code>Something else</code> if you are not install in VirtualBox, or it will erase your whole disk and install Ubuntu, you will lose all existing data on your disk, unless you want to do this.</strong></li>
+<li><code>Continue</code> in <code>Write the changes to disks</code> dialog, it will make 2 partitions, one for /, another for swap. There is no need to change it since it is just a virtual machine.</li>
+<li>Select <code>Where are you</code> on the map, one click on the map will reach this, then <code>Continue</code> or <code>Next</code> whatever you see. Oh, don&#x2019;t forget enter required information.</li>
+<li>After installation done, it will ask you to restart. Before restart, do <code>Load installation image</code> again, but choose <code>Remove Disk from Virtual Drive</code> instead of <code>Choose Virtual Optical Disk File</code>, then restart.</li>
+</ul>
+<h2 id="install-virtualbox-additional-tools"><a href="#Install_Virtualbox_additional_tools" class="headerlink" title="Install Virtualbox additional tools"></a>Install Virtualbox additional tools</h2><p>Virtualbox additional tools will improve performance of your virtual machine, after started your virtual Ubuntu, do as following:</p>
+<ul>
+<li>Click <code>Insert Guest Additions CD image</code> in menu <code>Devices</code>, then <code>Run</code> in the virtual Ubuntu popup dialog.</li>
+<li>It will install automatically after enter your password for your account.</li>
+</ul>
+<h2 id="make-it-real-full-screen"><a href="#Make_it_real_full_screen" class="headerlink" title="Make it real full screen"></a>Make it real full screen</h2><p>The virtual Ubuntu may cannot be full screen, when you&#x2019;re using a laptop with solution as 1366<em>768, the screen solution may be only 1024</em>768, to make it full screen, execute following command in your virtual Ubuntu.</p>
+<pre><code>sudo apt-get install virtualbox-guest-utils virtualbox-guest-x11 virtualbox-guest-dkms
+</code></pre><h2 id="how-to-support-64-bit-in-virtualbox-tbd"><a href="#How_to_support_64_bit_in_Virtualbox__28TBD_29" class="headerlink" title="How to support 64 bit in Virtualbox (TBD)"></a>How to support 64 bit in Virtualbox (<em>TBD</em>)</h2><h2 id="other-problems-tbd"><a href="#Other_problems__28TBD_29" class="headerlink" title="Other problems (TBD)"></a>Other problems (<em>TBD</em>)</h2></span>
       
     </div>
 
@@ -250,7 +276,9 @@ Testssh user@serverhost">
           
             <a href="/tags/Linux/" rel="tag">#Linux</a>
           
-            <a href="/tags/SSH/" rel="tag">#SSH</a>
+            <a href="/tags/Ubuntu/" rel="tag">#Ubuntu</a>
+          
+            <a href="/tags/Virtualbox/" rel="tag">#Virtualbox</a>
           
         </div>
       
@@ -259,17 +287,13 @@ Testssh user@serverhost">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/01/14/convert_audio_linux_mint_17/" rel="next" title="Convert audio in Linux Mint 17">
-                <i class="fa fa-chevron-left"></i> Convert audio in Linux Mint 17
+              <a href="/2016/02/05/split_flac_with_cue_linux/" rel="next" title="Split flac with cue in linux (Linux Mint 17)">
+                <i class="fa fa-chevron-left"></i> Split flac with cue in linux (Linux Mint 17)
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/02/05/split_flac_with_cue_linux/" rel="prev" title="Split flac with cue in linux (Linux Mint 17)">
-                Split flac with cue in linux (Linux Mint 17) <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -390,7 +414,7 @@ Testssh user@serverhost">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#step-1-gen-ssh-key"><span class="nav-number">1.</span> <span class="nav-text">Step 1. gen ssh key</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#step-2-pass-key-to-server"><span class="nav-number">2.</span> <span class="nav-text">Step 2. pass key to server</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#test"><span class="nav-number">3.</span> <span class="nav-text">Test</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#quick-install"><span class="nav-number">1.</span> <span class="nav-text">Quick Install</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#download-installation-image"><span class="nav-number">1.1.</span> <span class="nav-text">Download installation image</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#create-virtual-machine-in-virtualbox"><span class="nav-number">1.2.</span> <span class="nav-text">Create virtual machine in Virtualbox</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#load-installation-image"><span class="nav-number">1.3.</span> <span class="nav-text">Load installation image</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#install-with-default-options"><span class="nav-number">1.4.</span> <span class="nav-text">Install with default options</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#install-virtualbox-additional-tools"><span class="nav-number">2.</span> <span class="nav-text">Install Virtualbox additional tools</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#make-it-real-full-screen"><span class="nav-number">3.</span> <span class="nav-text">Make it real full screen</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#how-to-support-64-bit-in-virtualbox-tbd"><span class="nav-number">4.</span> <span class="nav-text">How to support 64 bit in Virtualbox (TBD)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#other-problems-tbd"><span class="nav-number">5.</span> <span class="nav-text">Other problems (TBD)</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
